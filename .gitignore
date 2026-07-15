@@ -216,3 +216,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# --- MSc project specific ---
+config.py
+data/raw/
+data/processed/*
+!data/processed/.gitkeep
+!data/raw/.gitkeep
+.idea/
