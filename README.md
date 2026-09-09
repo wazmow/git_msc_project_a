@@ -46,7 +46,7 @@ Key libraries:
 
 ## Development Notes and images   
 
-
+```
 Total raw file lines: 40,473,352  
 Countries: ['USA' 'CAN' 'MEX']
 
@@ -65,14 +65,14 @@ A quick bar graph showing the headline counts per month for the entire 7.5 year 
 Minium monthly number of headlines: 64987
 Maximum monthly number of headlines: 141913
 Average monthly number of headlines: 96435  
+```
 
-
-
-![img.png](img.png)  
+![sentiment_records_per_month_before_filter.png](sentiment_records_per_month_before_filter.png)
+ 
 
 After Filtering for market cap and turnover we were left with 1,469 securities. This is how the sentiment headlines look after this filter  
 
-![img_4.png](img_4.png)  
+![sentiment_record_per_month_after_filter.png](sentiment_record_per_month_after_filter.png)
 
 Minium monthly number of headlines: 25176
 Maximum monthly number of headlines: 55018
@@ -85,11 +85,11 @@ and turnover filters...
 
 The distribution of mkt_cap in USD billions.
 
-![img_2.png](img_2.png)
+![mkt_cap_dist.png](mkt_cap_dist.png)
 
 The distribution of daily turnover in USD millions
+![turnover_dist.png](turnover_dist.png)
 
-![img_3.png](img_3.png)
 
 Using stock market trading experience which is backed up by current research a market cap filter minimum of $1bln and a turnover  
 minimum of $5m per day (Gu et al 2020) will be applied to the stock universe to ensure minimum market impact and reduction of  
@@ -117,10 +117,11 @@ the specific features took longer than expected with respect to not trying to lo
 3. 3,540,016 of sentiment based headlines after stock universe has been filtered.  
 4. Stock-days with news   : 795,363 (22.5% of skeleton) - show most days there is no news.  
 5. Distribution of Feature distributions  
-6. ![img_7.png](img_7.png)  
-7. 
+6. 
+ ![sentiment_feature_dsit.png](sentiment_feature_dsit.png)
 
 # Calculate pricing measures.  
+```
 1. Lot's of reasoning and justification behind why you chose the features.  
 2. End result: final panel 2,408,260 rows × 1,469 ISINs; seven features and six targets with their describes; the exact-multiple NaN arithmetic; winsorisation rates (0.47% price z, plus the Sector_z20 rate when you run it); the BIG/SBNY pair as the truncation rule's two-sided exhibit; and the before/after pvma story (−9.05 artefact → −6.63 genuine).  
 3. |       |       fwd_r1 |       fwd_r3 |       fwd_r5 |   fwd_r1_sec |   fwd_r3_sec |   fwd_r5_sec |
@@ -134,6 +135,7 @@ the specific features took longer than expected with respect to not trying to lo
 | 75%   |  0.0115431   |  0.0210633   |  0.0279674   |  0.00860702  |  0.0155277   |  0.020562    |
 | max   |  1.70181     |  1.91316     |  2.96294     |  1.70368     |  1.85575     |  2.91571     |
 
+```
 # ADF testing.  
 1. All stats passed stationarity tests:
 Loaded MODEL_DATASET: 2,370,189 rows, 1,469 unique ISINs
@@ -207,14 +209,17 @@ Rows: 1,677,998 | Stocks: 1,461
 
 Saved per-stock results to: P:\Personal\Birkbeck\MSc Project\git_msc_project_a\data\processed\var_lag_results_1.parquet
 
+```
 --- Status summary ---
 status
 ok             1391
 too_few_obs      70
 
+```
+```
 Successful fits: 1,391 of 1,461 stocks
 
-```
+
 -- Var results (modal | median) --  
   AIC: 10 | 10.0  
   HQIC: 6 | 6.0  
@@ -229,6 +234,7 @@ Successful fits: 1,391 of 1,461 stocks
 ```
 
 # Granger Testing
+```
 Results:
 C:\Users\m.byrom\AppData\Local\miniconda3\envs\msc_1\python.exe "P:\Personal\Birkbeck\MSc Project\git_msc_project_a\scripts\12_granger_testing.py" 
 Training panel: 1,677,998 rows, 1,461 ISINs, 2018-01-04 to 2023-03-30
@@ -311,7 +317,7 @@ universe_sentiment_score       1390    0.5736    0.0007    0.0129     0.0424
 
 Process finished with exit code 0
 
-
+```
 
 
 
